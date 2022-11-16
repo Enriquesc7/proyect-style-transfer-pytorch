@@ -299,7 +299,7 @@ class StyleTransfer:
                 end_scale: int = 512,
                 iterations: int = 500,
                 initial_iterations: int = 1000,
-                step_size: float = 0.002,
+                step_size: float = 0.2,
                 avg_decay: float = 0.99,
                 init: str = 'content',
                 style_scale_fac: float = 1.,
