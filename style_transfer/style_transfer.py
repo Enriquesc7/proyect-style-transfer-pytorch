@@ -16,7 +16,7 @@ from torchvision.transforms import functional as TF
  
 
 class VGGFeatures(nn.Module):
-    poolings = {'max': nn.MaxPool2d(10,10), 'average': nn.AvgPool2d, 'l2': partial(nn.LPPool2d, 2)}
+    poolings = {'max': nn.MaxPool2d, 'average': nn.AvgPool2d, 'l2': partial(nn.LPPool2d, 2)}
     pooling_scales = {'max': 1., 'average': 2., 'l2': 0.78}
 
     def __init__(self, layers, pooling='max'):
@@ -299,7 +299,7 @@ class StyleTransfer:
                 end_scale: int = 512,
                 iterations: int = 500,
                 initial_iterations: int = 1000,
-                step_size: float = 0.02,
+                step_size: float = 0.002,
                 avg_decay: float = 0.99,
                 init: str = 'content',
                 style_scale_fac: float = 1.,
