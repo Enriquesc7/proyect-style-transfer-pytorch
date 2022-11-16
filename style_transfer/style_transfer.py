@@ -17,7 +17,7 @@ from torchvision.transforms import functional as TF
 
 class VGGFeatures(nn.Module):
     poolings = {'max': nn.MaxPool2d, 'average': nn.AvgPool2d, 'l2': partial(nn.LPPool2d, 2)}
-    pooling_scales = {'max': 3., 'average': 2., 'l2': 0.78}
+    pooling_scales = {'max': 4., 'average': 2., 'l2': 0.78}
 
     def __init__(self, layers, pooling='max'):
         super().__init__()
